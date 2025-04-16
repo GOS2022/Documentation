@@ -30,9 +30,9 @@ ccm:
 	@cmd /c "IF EXIST _tmp_ccm_patch.cmd (del /q _tmp_ccm_patch.cmd)"
 	
 doxymod:
-	@tools\doxygen\doxygen DoxyConfig
+	@tools\doxygen\doxygen gos2022_doxyconfig.cfg
 	@cmd /c "cd __doxydoc\latex\ && make.bat"
-	copy __doxydoc\latex\refman.pdf __doxydoc\GOS2022.pdf
+	copy __doxydoc\latex\refman.pdf ..\10_OS\GOS2022.pdf
 	
 .PHONY: all build clean ccm doxygen doxyall doxyconf obj2srec obj2srecall subdirs $(SUBDIRS)
 
